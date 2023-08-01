@@ -1,7 +1,7 @@
 import Gasto from "./Gasto"
 
 
-function ListadoGastos({gastos, setGastoEditar}) {
+function ListadoGastos({gastos, setGastoEditar, eliminarGasto}) {
   return (
     <div className="listado-gastos contenedor">
         <h2>{gastos.length ? 'Gastos' : 'No Hay Gastos'}</h2>
@@ -9,7 +9,9 @@ function ListadoGastos({gastos, setGastoEditar}) {
             <Gasto 
             key={gasto.id}
             gasto = {gasto}
-            setGastoEditar={setGastoEditar}/>
+            setGastoEditar={setGastoEditar}
+            eliminarGasto={eliminarGasto}
+            />
         ))}
        
     </div>
