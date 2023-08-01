@@ -1,11 +1,20 @@
 import Gasto from "./Gasto"
 
 
-function ListadoGastos({gastos, setGastoEditar, eliminarGasto}) {
+function ListadoGastos({gastos,
+   setGastoEditar,
+    eliminarGasto,
+    filtro,
+    gastosFiltrados
+  }) {
   return (
     <div className="listado-gastos contenedor">
-        <h2>{gastos.length ? 'Gastos' : 'No Hay Gastos'}</h2>
-        {gastos.map(gasto =>(
+       
+        {
+          filtro ? (
+            <>
+             <h2>{gastosFiltrados.length ? 'Gastos' : 'No Hay Gastos en esta categoria'}</h2>
+             {gastosFiltrados.map(gasto =>(
             <Gasto 
             key={gasto.id}
             gasto = {gasto}
@@ -13,6 +22,22 @@ function ListadoGastos({gastos, setGastoEditar, eliminarGasto}) {
             eliminarGasto={eliminarGasto}
             />
         ))}
+       </>
+          ) : (
+            <>
+            <h2>{gastos.length ? 'Gastos' : 'No Hay Gastos'}</h2>
+            {gastos.map(gasto =>(
+              <Gasto 
+              key={gasto.id}
+              gasto = {gasto}
+              setGastoEditar={setGastoEditar}
+              eliminarGasto={eliminarGasto}
+              />
+
+          ))}
+          </>
+          )
+        }
        
     </div>
   )
