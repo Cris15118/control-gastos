@@ -8,13 +8,13 @@ function Modal({
   setAnimarModal,
   guardarGasto,
   gastoEditar,
-  setGastoEditar
+  setGastoEditar,
 }) {
   const [mensaje, setMensaje] = useState("");
   const [nombre, setNombre] = useState("");
   const [cantidad, setCantidad] = useState("");
   const [categoria, setCategoria] = useState("");
-  const [fecha, setFecha]= useState("")
+  const [fecha, setFecha] = useState("");
   const [id, setId] = useState("");
 
   useEffect(() => {
@@ -22,14 +22,14 @@ function Modal({
       setNombre(gastoEditar.nombre);
       setCantidad(gastoEditar.cantidad);
       setCategoria(gastoEditar.categoria);
-      setFecha(gastoEditar.fecha)
-      setId(gastoEditar.id)
+      setFecha(gastoEditar.fecha);
+      setId(gastoEditar.id);
     }
   }, []);
 
   const ocultarModal = () => {
     setAnimarModal(false);
-    setGastoEditar(false)
+    setGastoEditar(false);
     setTimeout(() => {
       setModal(false);
     }, 500);
@@ -43,7 +43,7 @@ function Modal({
       }, 3000);
       return;
     }
-    guardarGasto({ nombre, cantidad, categoria,id, fecha });
+    guardarGasto({ nombre, cantidad, categoria, id, fecha });
   };
 
   return (

@@ -15,7 +15,7 @@ function NuevoPresupuesto({
       return;
     }
     setMensaje("");
-    setIsValidPresupuesto(true)
+    setIsValidPresupuesto(true);
   };
   return (
     <div className="contenedor-presupuesto contenedor sombra">

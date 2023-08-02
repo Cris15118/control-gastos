@@ -6,25 +6,21 @@ function Header({
   setPresupuesto,
   setIsValidPresupuesto,
   isValidPresupuesto,
-  gastos
+  gastos,
+  setGastos
 }) {
   return (
     <header>
       <h1>Planificador de gastos</h1>
       {isValidPresupuesto ? (
-        <ControlPresupuesto
-        presupuesto={presupuesto}
-        gastos= {gastos}
+        <ControlPresupuesto presupuesto={presupuesto} gastos={gastos} setGastos={setGastos} setPresupuesto={setPresupuesto} setIsValidPresupuesto={setIsValidPresupuesto} />
+      ) : (
+        <NuevoPresupuesto
+          presupuesto={presupuesto}
+          setPresupuesto={setPresupuesto}
+          setIsValidPresupuesto={setIsValidPresupuesto}
         />
-      ): (
-         <NuevoPresupuesto
-        presupuesto={presupuesto}
-        setPresupuesto={setPresupuesto}
-        setIsValidPresupuesto={setIsValidPresupuesto}
-      />
-      
       )}
-     
     </header>
   );
 }

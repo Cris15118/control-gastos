@@ -38,10 +38,7 @@ function Gasto({ gasto, setGastoEditar, eliminarGasto }) {
 
   const trailingActions = () => (
     <TrailingActions>
-      <SwipeAction
-      destructive={true}
-       onClick={() => eliminarGasto(id)}
-       >
+      <SwipeAction destructive={true} onClick={() => eliminarGasto(id)}>
         Eliminar
       </SwipeAction>
     </TrailingActions>
